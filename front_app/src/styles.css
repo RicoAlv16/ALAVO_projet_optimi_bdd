@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --primary: #546de5;
+    --secondary: #778beb;
+    --accent: #e5546d;
+    --lightgray: #ddd;
+    --text-regular: #444;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: contents;
+    font-family: var(--font-family);
+    color: var(--text-regular);
+    background-color: #eff3f8;
+  }
+  img {
+    max-width: 100%;
+  }
+  hr {
+    margin: 20px 0px;
+    border-top: 1px solid #ddd;
+  }
+  

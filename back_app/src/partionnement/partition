@@ -1,0 +1,23 @@
+CREATE TABLE parties (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_organizer INT NOT NULL,
+    nom VARCHAR(255) NOT NULL,
+    description TEXT,
+    place VARCHAR(255),
+    code_postal INT NOT NULL,
+    type ENUM('privée', 'publique') NOT NULL,
+    total_place INT,
+    remain_place INT,
+    for_pay BOOLEAN NOT NULL,
+    price DECIMAL(10, 2) DEFAULT 0,
+    party_date_heure DATETIME NOT NULL,
+    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
+    date_update DATETIME DEFAULT CURRENT_TIMESTAMP,
+    date_delete DATETIME DEFAULT CURRENT_TIMESTAMP,
+    INDEX (code_postal)
+) PARTITION BY LIST (code_postal) (
+    PARTITION p_region1 VALUES IN (75001, 75002, 75003, 75004),
+    PARTITION p_region2 VALUES IN (69001, 69002, 69003, 69004),
+    PARTITION p_region3 VALUES IN (91001, 92002, 93003, 94004),
+    PARTITION p_other VALUES IN (99999)
+);

@@ -1,0 +1,9 @@
+.title-font {
+  font-family: "Architects Daughter", cursive;
+}
+
+.matiere {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(230, 236, 241, 0.45);
+}
